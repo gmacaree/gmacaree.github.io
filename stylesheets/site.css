@@ -482,7 +482,7 @@ html.portfolio-active nav .nav-toggle .line {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     justify-items: center;
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-bottom));
     min-height: -webkit-fill-available;
     gap: 0.5rem;
     align-items: center;
@@ -497,7 +497,7 @@ html.portfolio-active nav .nav-toggle .line {
         display: grid;
         -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
-        overflow-Y: hidden; } }
+        overflow: hidden; } }
     .portfolio-detail .portfolio-grid .left {
       width: 100%;
       position: relative;
@@ -556,7 +556,7 @@ html.portfolio-active nav .nav-toggle .line {
           padding-right: 2.5rem;
           padding-bottom: 1.5rem;
           overflow-Y: scroll;
-          max-height: 100vh;
+          max-height: calc(100vh - env(safe-area-inset-bottom));
           max-height: -webkit-fill-available;
           -ms-grid-row-align: center;
               align-self: center;
@@ -574,10 +574,11 @@ html.portfolio-active nav .nav-toggle .line {
   .portfolio-detail .hex-container {
     width: 80%;
     margin: 0 auto;
-    overflow-y: hidden; }
+    overflow: hidden; }
     .portfolio-detail .hex-container .hex-outer {
-      overflow: visible;
-      overflow-y: hidden; }
+      overflow: hidden;
+      -webkit-transform: rotate(-60deg) skewY(30deg) translateZ(0);
+              transform: rotate(-60deg) skewY(30deg) translateZ(0); }
     .portfolio-detail .hex-container .rotate-container {
       position: absolute;
       top: 0;
