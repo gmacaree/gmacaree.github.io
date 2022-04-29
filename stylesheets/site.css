@@ -498,7 +498,10 @@ html.portfolio-active nav .nav-toggle .line {
         display: grid;
         -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
-        overflow: hidden; } }
+        overflow: hidden;
+        max-width: 1250px;
+        margin-left: auto;
+        margin-right: auto; } }
     .portfolio-detail .portfolio-grid .left {
       width: 100%;
       position: relative;
