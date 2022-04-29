@@ -483,7 +483,7 @@ html.portfolio-active nav .nav-toggle .line {
     grid-template-columns: 1fr;
     justify-items: center;
     height: calc(100vh - env(safe-area-inset-bottom));
-    min-height: -webkit-fill-available;
+    max-height: calc(100vh - calc(100vh - 100%));
     gap: 0.5rem;
     align-items: center;
     overflow-Y: scroll;
@@ -756,6 +756,11 @@ html.portfolio-active .portfolio-utility-buttons {
     display: flex;
     justify-content: center;
     align-items: center; }
+    .hex-loader-container .hex-loader.success .hex-frame .hex-wall .fill, .hex-loader-container .hex-loader.failure .hex-frame .hex-wall .fill {
+      height: 4.25rem;
+      width: 4.25rem;
+      border-radius: 50%;
+      background-color: #eaa678; }
     .hex-loader-container .hex-loader .hex-frame {
       width: 100%;
       height: 100%;
@@ -768,12 +773,13 @@ html.portfolio-active .portfolio-utility-buttons {
       position: absolute;
       left: 50%;
       top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%) translateZ(0);
+              transform: translate(-50%, -50%) translateZ(0);
       -webkit-transform-origin: center center;
               transform-origin: center center;
       height: 4.25rem;
-      width: 2.5rem; }
+      width: 2.5rem;
+      overflow: hidden; }
       .hex-loader-container .hex-loader .hex-wall:nth-child(2) {
         -webkit-transform: translate(-50%, -50%) rotate(60deg);
                 transform: translate(-50%, -50%) rotate(60deg); }
@@ -786,11 +792,22 @@ html.portfolio-active .portfolio-utility-buttons {
         top: 0;
         left: 0;
         border-radius: 0.175rem; }
-        .hex-loader-container .hex-loader .hex-wall span:last-child {
+        .hex-loader-container .hex-loader .hex-wall span:nth-child(2) {
           top: auto;
           bottom: 0;
           left: auto;
           right: 0; }
+      .hex-loader-container .hex-loader .hex-wall .fill {
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        position: absolute; }
     .hex-loader-container .hex-loader .loading-frame span {
       background-color: #24485f;
       width: 2.5rem;
@@ -805,32 +822,32 @@ html.portfolio-active .portfolio-utility-buttons {
               animation: hex-1 1.5s linear infinite;
       -webkit-transition: opacity 0.25s ease-in-out;
       transition: opacity 0.25s ease-in-out; }
-      .hex-loader-container .hex-loader .loading-bar span:last-child {
+      .hex-loader-container .hex-loader .loading-bar span:nth-child(2) {
         -webkit-animation: hex-2 1.5s linear infinite;
                 animation: hex-2 1.5s linear infinite; }
-    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(1) span:last-child {
+    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(1) span:nth-child(2) {
       -webkit-animation-delay: 0.75s;
               animation-delay: 0.75s; }
     .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(2) span:first-child {
       -webkit-animation-delay: 0.25s;
               animation-delay: 0.25s; }
-    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(2) span:last-child {
+    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(2) span:nth-child(2) {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
     .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(3) span:first-child {
       -webkit-animation-delay: 0.5s;
               animation-delay: 0.5s; }
-    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(3) span:last-child {
+    .hex-loader-container .hex-loader .loading-bar .hex-wall:nth-child(3) span:nth-child(2) {
       -webkit-animation-delay: 1.25s;
               animation-delay: 1.25s; }
     .hex-loader-container .hex-loader .interior {
       opacity: 0;
-      -webkit-transition: opacity 0.25s ease-in-out;
-      transition: opacity 0.25s ease-in-out; }
+      -webkit-transition: opacity 0.25s ease-in-out 0.25s;
+      transition: opacity 0.25s ease-in-out 0.25s; }
       .hex-loader-container .hex-loader .interior .line {
         width: 0;
         height: 0.35rem;
-        background-color: #eaa678;
+        background-color: #162c3a;
         position: absolute;
         border-radius: 0.175rem; }
       .hex-loader-container .hex-loader .interior.success-mark .line:first-child {
