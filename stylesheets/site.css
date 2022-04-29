@@ -534,7 +534,7 @@ html.portfolio-active nav .nav-toggle .line {
         .portfolio-detail .portfolio-grid .left p strong {
           color: #162c3a; }
     .portfolio-detail .portfolio-grid .right {
-      padding: 0.75rem 1rem 8%;
+      padding: 0.75rem 1rem 0.5rem;
       -ms-grid-column-align: left;
           justify-self: left;
       -webkit-box-sizing: border-box;
@@ -544,8 +544,7 @@ html.portfolio-active nav .nav-toggle .line {
       align-self: flex-start; }
       @media (min-width: 500px) and (max-width: 999px) and (min-aspect-ratio: 6/5) {
         .portfolio-detail .portfolio-grid .right {
-          margin-top: 0;
-          padding-bottom: 0.5rem; } }
+          margin-top: 0; } }
       @media (min-width: 500px) {
         .portfolio-detail .portfolio-grid .right {
           padding: 1rem; } }
