@@ -81,6 +81,7 @@ article {
         overflow-x: visible; } }
   article section.main {
     height: 100vh;
+    min-height: -webkit-fill-available;
     position: relative; }
     article section.main .interior {
       position: absolute;
@@ -434,6 +435,7 @@ html.portfolio-active nav .nav-toggle .line {
   width: calc(100vw - 4.38675134595rem);
   font-family: "Roboto", sans-serif;
   height: 100vh;
+  min-height: -webkit-fill-available;
   color: #162c3a;
   overflow: hidden;
   position: fixed;
@@ -454,6 +456,7 @@ html.portfolio-active nav .nav-toggle .line {
       width: 85vw; } }
   .portfolio-detail .portfolio-detail-entry {
     height: 100vh;
+    min-height: -webkit-fill-available;
     padding: 0;
     position: relative; }
     .portfolio-detail .portfolio-detail-entry:focus {
@@ -476,6 +479,7 @@ html.portfolio-active nav .nav-toggle .line {
     grid-template-columns: 1fr;
     justify-items: center;
     height: 100vh;
+    min-height: -webkit-fill-available;
     gap: 0.5rem;
     align-items: center;
     overflow-Y: scroll;
@@ -548,6 +552,7 @@ html.portfolio-active nav .nav-toggle .line {
           padding-bottom: 1.5rem;
           overflow-Y: scroll;
           max-height: 100vh;
+          max-height: -webkit-fill-available;
           -ms-grid-row-align: center;
               align-self: center;
           margin-top: 0; } }
@@ -563,7 +568,11 @@ html.portfolio-active nav .nav-toggle .line {
     margin-bottom: -0.75rem; }
   .portfolio-detail .hex-container {
     width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow-y: hidden; }
+    .portfolio-detail .hex-container .hex-outer {
+      overflow: visible;
+      overflow-y: hidden; }
     .portfolio-detail .hex-container .rotate-container {
       position: absolute;
       top: 0;
