@@ -78,6 +78,8 @@ function convertFormToJSON(form) {
 
 function calculatePortfolio() {
     if($("html").hasClass("portfolio-active")) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh+"px");
         var element = $(".portfolio-detail-entry.active");
         var offset = element.offset().top-$(".portfolio-detail").offset().top+$(".portfolio-detail").scrollTop();
         $(".portfolio-detail").scrollTop(offset);
